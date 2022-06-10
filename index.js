@@ -1,27 +1,23 @@
+function arrangeWordListInAlphabeticalOrder(wordlist) {
+  let sortedWordList = [];
+  let values = []
 
+  for (let i = 0; i < wordlist.length; i++) {
+   values.push([wordlist[i], 0]);
+    for (let j = 0; j < wordlist.length; j++) {
+      if (wordlist[i] > wordlist[j]) {
+        values[i][1]++;
+      }
+    }
 
+    if (sortedWordList[values[i][1]] === undefined) {
+      sortedWordList[values[i][1]] = values[i][0];
+    } else {
+      sortedWordList[values[i][1] + 1] = values[i][0];
+    }
+  }
 
-
-function sort(entrada){
-  let array =  [];
-
-  let values = {}
-
-   for( let i = 0; i < entrada.length; i++ ) {
-       values[entrada[i]] = 0;
-   }
-
-   
-   for(let i = 0; i < entrada.length; i++){
-     for(let j = 0; j < entrada.length; j++){
-        if(entrada[i] > entrada[j]){
-             values[entrada[i]]++
-        }
-     }
-     array[values[entrada[i]]]  = entrada[i]
-   }
-   return array
+  return sortedWordList;
 }
 
-
-module.exports = sort
+module.exports = arrangeWordListInAlphabeticalOrder;
