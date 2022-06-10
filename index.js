@@ -1,27 +1,29 @@
+function sort(entrada) {
+  let array = [];
 
+  let values = [];
 
+  for (let i = 0; i < entrada.length; i++) {
+    values.push([entrada[i], 0]);
+  }
 
+  console.log(values);
 
-function sort(entrada){
-  let array =  [];
+  for (let i = 0; i < entrada.length; i++) {
+    for (let j = 0; j < entrada.length; j++) {
+      if (entrada[i] > entrada[j]) {
+        values[i][1]++;
+      }
+    }
 
-  let values = {}
+    if (array[values[i][1]] === undefined) {
+      array[values[i][1]] = entrada[i];
+    } else {
+      array[values[i][1] + 1] = entrada[i];
+    }
+  }
 
-   for( let i = 0; i < entrada.length; i++ ) {
-       values[entrada[i]] = 0;
-   }
-
-   
-   for(let i = 0; i < entrada.length; i++){
-     for(let j = 0; j < entrada.length; j++){
-        if(entrada[i] > entrada[j]){
-             values[entrada[i]]++
-        }
-     }
-     array[values[entrada[i]]]  = entrada[i]
-   }
-   return array
+  return array;
 }
 
-
-module.exports = sort
+module.exports = sort;
