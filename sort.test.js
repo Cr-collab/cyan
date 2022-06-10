@@ -1,10 +1,10 @@
-const sort =  require("./index")
-describe("Verifacando se sort esta funcionando", () => {
-    it("se a função esta reorganizando em ordem alfabetica",()=> {
+const arrangeWordListInAlphabeticalOrder =  require("./index")
+describe("should be able to se", () => {
+    it("should it be possible to arrange a vector based on alphabetical order",()=> {
       
-      let  Entrada = ["zebra","cálice", "borboleata"];
-      let  esperado = [ 'borboleata', 'cálice', 'zebra' ]
+      let  deposit = ["zebra","cálice", "borboleata", "helicoptero", "zebra"];
+      let  witdraw = [ 'borboleata', 'cálice',"helicoptero" ,'zebra', "zebra" ]
 
-      expect(sort(Entrada)).toEqual(esperado)
+      expect(arrangeWordListInAlphabeticalOrder(deposit)).toEqual(witdraw)
     })
 })
