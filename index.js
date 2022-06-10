@@ -22,8 +22,6 @@ function sort(entrada) {
       array[values[i][1] + 1] = entrada[i];
     }
   }
-
   return array;
 }
-
 module.exports = sort;
